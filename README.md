@@ -1,27 +1,8 @@
-# ToDoList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Welcome to my To Do List Web Application
 
-## Development server
+The purpose of this app is to allow a user to create reminders and notes for themself such that they can manage their activities and goals in a more organized way. The user can create folders for specific categories of tasks. Within each folder, the user can create as many to do actions as they please.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The to do activies should have the ability to be added, updated and changed, completed, and deleted. Possibly a feature will be added in which the user can add an end date for the specific activity. If the task isn't completed by said time, it will prompt the user with a warning
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The web app will allow a user to have their own account such that they can store their tasks and folders and come back to them whenever they please. An account is not required to use the application, but the to do notes will be lost when the user leaves the webpage or deletes their cookies.
