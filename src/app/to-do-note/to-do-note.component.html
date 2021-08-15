@@ -1,0 +1,11 @@
+<div class="toDoBlock">
+    <h2>Tasks</h2>
+    <div id="checklist">
+        <ul>
+            <li *ngFor="let note of toDoNote">
+                <input type="checkbox" id="todo" name="todo" value="todo">
+                <label>{{note.title}}</label>
+            </li>
+        </ul>
+    </div>
+</div>
