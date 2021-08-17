@@ -1,0 +1,75 @@
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form (ngSubmit)="onSubmit()" #userForm="ngForm" autocomplete="off">
+			<h1>Create Account</h1>
+			<label for="username" class="inp">
+				<input type="text" [(ngModel)]="user.username" name="username" id="username" placeholder="Username" required>
+				<svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+				  <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+				</svg>
+				<svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+				  <path d="M1 7 5.5 11 L13 1"></path>
+				</svg>
+			</label>
+			<label for="email" class="inp">
+				<input type="text" [(ngModel)]="user.email" name="email" id="email" placeholder="Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+				<svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+				  <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+				</svg>
+				<svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+				  <path d="M1 7 5.5 11 L13 1"></path>
+				</svg>
+			</label>
+			<label for="password" class="inp">
+				<input type="text" [(ngModel)]="user.password" name="password" id="password" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,100}$" required>
+				<svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+				  <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+				</svg>
+				<svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+				  <path d="M1 7 5.5 11 L13 1"></path>
+				</svg>
+			</label>
+			<button type="submit" class="buttonPad" [disabled]="!userForm.form.valid">Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form (ngSubmit)="loginAttempt" #userform="ngForm" autocomplete="off">
+			<h1>Sign in</h1>
+			<label for="username-login" class="inp">
+				<input type="text" [(ngModel)]="loginUser.username" name="username" id="username-login" placeholder="Username" required>
+				<svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+				  <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+				</svg>
+				<svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+				  <path d="M1 7 5.5 11 L13 1"></path>
+				</svg>
+			</label>
+			<label for="password-login" class="inp">
+				<input type="password" [(ngModel)]="loginUser.password" name="password" id="password-login" placeholder="Password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,100}$" required>
+				<svg width="280px" height="18px" viewBox="0 0 280 18" class="border">
+				  <path d="M0,12 L223.166144,12 C217.241379,12 217.899687,12 225.141066,12 C236.003135,12 241.9279,12 249.827586,12 C257.727273,12 264.639498,12 274.514107,12 C281.097179,12 281.755486,12 276.489028,12"></path>
+				</svg>
+				<svg width="14px" height="12px" viewBox="0 0 14 12" class="check">
+				  <path d="M1 7 5.5 11 L13 1"></path>
+				</svg>
+			</label>
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To access existing tasks and task categories, sign in with an exisiting account!</p>
+				<button (click)="switchOtherPanel()" class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button (click)="switchPanel()" class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>

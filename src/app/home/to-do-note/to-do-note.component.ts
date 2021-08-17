@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TASKS } from '../tasks';
+import { TASKS } from '../../tasks';
 
 @Component({
   selector: 'app-to-do-note',
