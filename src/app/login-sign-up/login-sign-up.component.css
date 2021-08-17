@@ -11,18 +11,23 @@ a {
 }
 
 button {
-    color: white;
-    padding: 10px 20px;
-    line-height: 1;
-    color: white;
-    background: none;
-    border: none;
-    outline: none;
-    overflow: hidden;
-    cursor: pointer;
-    filter: drop-shadow(0 2px 8px rgba(rgb(8, 117, 225), 0.32));
-    content: "";
-    background-image: linear-gradient(100deg, rgb(0, 92, 185), rgb(8, 117, 225));
-    border-radius: 24px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	border-radius: 20px;
+	border: 1px solid rgb(8, 117, 225);
+	background-color: rgb(8, 117, 225);
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+	cursor:pointer;
+}
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
 }
