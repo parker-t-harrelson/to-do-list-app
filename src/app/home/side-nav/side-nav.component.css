@@ -114,6 +114,7 @@ overflow:hidden;
 transition:width .2s linear;
 -webkit-transform:translateZ(0) scale(1,1);
   opacity:1;
+  z-index:100;
 }
 
 .main-menu>ul {

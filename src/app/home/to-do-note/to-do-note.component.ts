@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ToDoNote } from 'src/app/to-do-note';
 import { TASKS } from '../../tasks';
 
 @Component({
@@ -9,9 +11,32 @@ import { TASKS } from '../../tasks';
 export class ToDoNoteComponent implements OnInit {
 
   toDoNote = TASKS;
+  id: string;
 
-  constructor() { }
+  constructor() { 
+    this.id = 'a';
+  }
 
   ngOnInit(): void {
+  }
+
+  incrementID(): void {
+    let letter = 'a';
+    this.id = this.id + letter;
+  }
+
+  getId(): string {
+
+    this.incrementID();
+    return this.id;
+  }
+
+  getCurId(): string {
+    return this.id;
+  }
+
+  setCompleted(id: string, note: ToDoNote): void {
+    note.completed = !note.completed;
+    (document.getElementById(id) as HTMLInputElement).checked = note.completed;
   }
 }
