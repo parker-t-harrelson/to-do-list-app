@@ -12,4 +12,11 @@ export class SideNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public turnOpaque(): void {
+    document.getElementById('opaq')?.setAttribute("style", "visibility: visible");
+  }
+
+  public turnOff(): void {
+    document.getElementById('opaq')?.setAttribute("style", "visibility: hidden");
+  }
 }

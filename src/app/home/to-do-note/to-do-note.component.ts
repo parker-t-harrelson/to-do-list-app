@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from 'src/app/services/user-service.service';
 import { ToDoNote } from 'src/app/to-do-note';
-import { TASKS } from '../../tasks';
 
 @Component({
   selector: 'app-to-do-note',
@@ -10,19 +10,24 @@ import { TASKS } from '../../tasks';
 })
 export class ToDoNoteComponent implements OnInit {
 
-  toDoNote = TASKS;
+  toDoNote!: ToDoNote[];
   id: string;
 
-  constructor() { 
+  constructor(private userService: UserServiceService) { 
     this.id = 'a';
   }
 
   ngOnInit(): void {
+    this.userService.findTasks().subscribe(data => {
+      this.toDoNote = data;
+    });
   }
 
   incrementID(): void {
     let letter = 'a';
     this.id = this.id + letter;
+
+    console.log(this.toDoNote);
   }
 
   getId(): string {

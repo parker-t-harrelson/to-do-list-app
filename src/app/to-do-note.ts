@@ -1,6 +1,7 @@
 
-export interface ToDoNote {
+export class ToDoNote {
 
-    title: string;
-    completed: boolean;
+    id!: number;
+    taskDesc!: string;
+    completed!: boolean;
 }
