@@ -1,8 +1,9 @@
 
 <div class="toDoBlock">
     <div id="checklist">
+        <h1>{{category[0].title}}</h1>
         <ul>
-            <li *ngFor="let note of toDoNote">
+            <li *ngFor="let note of category[0].tasks">
                 <input class="inp-cbx" [(ngModel)]="note.completed" [id]="getId()" type="checkbox" style="display: none;" />
                 <label class="cbx" [for]="getCurId()" id="cbx"><span><svg width="12px" height="9px" viewbox="0 0 12 9">
                     <polyline points="1 5 4 8 11 1"></polyline>

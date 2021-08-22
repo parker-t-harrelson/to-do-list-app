@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../user';
 import { ToDoNote } from '../to-do-note';
 import { Observable } from 'rxjs';
+import { Category } from '../category';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,13 @@ import { Observable } from 'rxjs';
 export class UserServiceService {
 
   private userUrl: string;
-  private loginUrl: string;
   private taskUrl: string;
+  private categoryUrl: string;
 
   constructor(private http: HttpClient) { 
     this.userUrl = 'http://localhost:8080/users';
-    this.loginUrl = 'http://localhost:8080/login';
-    this.taskUrl = 'http://localhost:8080/tasks'
+    this.taskUrl = 'http://localhost:8080/tasks';
+    this.categoryUrl = "http://localhost:8080/categories";
   }
 
   public findTasks(): Observable<ToDoNote[]> {
@@ -27,7 +28,9 @@ export class UserServiceService {
     return this.http.post<User>(this.userUrl, user);
   }
 
-  
+  public findCategorys(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.categoryUrl);
+  }
 }
 
 

@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/category';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { ToDoNote } from 'src/app/to-do-note';
 
@@ -10,24 +11,22 @@ import { ToDoNote } from 'src/app/to-do-note';
 })
 export class ToDoNoteComponent implements OnInit {
 
-  toDoNote!: ToDoNote[];
   id: string;
+  category!: Category[];
 
   constructor(private userService: UserServiceService) { 
     this.id = 'a';
   }
 
   ngOnInit(): void {
-    this.userService.findTasks().subscribe(data => {
-      this.toDoNote = data;
+    this.userService.findCategorys().subscribe(data => {
+      this.category = data;
     });
   }
 
   incrementID(): void {
     let letter = 'a';
     this.id = this.id + letter;
-
-    console.log(this.toDoNote);
   }
 
   getId(): string {
