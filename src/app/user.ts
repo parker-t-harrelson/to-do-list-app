@@ -1,3 +1,4 @@
+import { Category } from "./category";
 
 export class User {
 
@@ -5,4 +6,5 @@ export class User {
     username!: string;
     email!: string;
     password!: string;
+    category!: Category[];
 }

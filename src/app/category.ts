@@ -1,6 +1,6 @@
 import { ToDoNote } from "./to-do-note";
 
 export class Category {
-    title!: string;
+    categoryName!: string;
     tasks!: ToDoNote[];
 }

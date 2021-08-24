@@ -94,6 +94,11 @@ li {
   padding: 8px;
 }
 
+h2 {
+  padding-left: 55px;
+  font-size: 30px;
+}
+
 .toDoBlock {
   position: absolute;
   display: flex;

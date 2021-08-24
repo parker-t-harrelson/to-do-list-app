@@ -13,11 +13,13 @@ export class UserServiceService {
   private userUrl: string;
   private taskUrl: string;
   private categoryUrl: string;
+  private getUserUrl: string;
 
   constructor(private http: HttpClient) { 
     this.userUrl = 'http://localhost:8080/users';
     this.taskUrl = 'http://localhost:8080/tasks';
     this.categoryUrl = "http://localhost:8080/categories";
+    this.getUserUrl = "http://localhost:8080/user-info";
   }
 
   public findTasks(): Observable<ToDoNote[]> {
@@ -30,6 +32,10 @@ export class UserServiceService {
 
   public findCategorys(): Observable<Category[]> {
     return this.http.get<Category[]>(this.categoryUrl);
+  }
+
+  public getUserInfo(): Observable<User> {
+    return this.http.get<User>(this.getUserUrl);
   }
 }
 
